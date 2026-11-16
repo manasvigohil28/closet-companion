@@ -13,43 +13,52 @@
   display: grid;
 }
 
-/* Left panel: peach, wordmark, three short lines */
+/* Left panel: sage, with a soft curved edge and the arch picture */
 .auth__side {
   position: relative;
-  background: var(--peach-soft);
-  border-bottom: 1px solid var(--peach-line);
+  background: var(--sage-soft);
+  border-radius: 0 0 56px 56px;
   padding: var(--space-6) var(--space-5) var(--space-5);
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
 }
 
 .auth__side-flower {
   position: absolute;
-  top: 14px;
-  right: 18px;
+  top: 16px;
+  right: 20px;
 }
 
 .auth__side-flower-sm {
   position: absolute;
-  bottom: 16px;
-  right: 40px;
+  top: 70px;
+  left: 22px;
 }
 
 .auth__tagline {
   color: var(--rose);
-  font-size: 1.05rem;
+  font-size: 1rem;
+}
+
+.auth__art {
+  width: 124px;
+  max-width: 40%;
+  margin-top: var(--space-3);
 }
 
 .auth__lines {
   list-style: none;
-  margin: var(--space-2) 0 0;
+  margin: var(--space-4) 0 0;
   padding: 0;
   display: none;
   flex-direction: column;
   gap: var(--space-2);
   color: var(--soft);
   font-size: 0.95rem;
+  text-align: left;
 }
 
 .auth__lines li::before {
@@ -98,18 +107,29 @@
 
 @media (min-width: 820px) {
   .auth__card {
-    max-width: 880px;
-    grid-template-columns: 1fr 1fr;
-    min-height: 540px;
+    max-width: 900px;
+    grid-template-columns: 1.05fr 1fr;
+    min-height: 560px;
   }
 
   .auth__side {
+    /* the curve moves to the right edge once the panels sit side by side */
+    border-radius: 0 72px 72px 0;
     padding: var(--space-7) var(--space-6);
     justify-content: center;
-    gap: var(--space-4);
-    /* side by side now, so the edge moves from the bottom to the right */
-    border-bottom: 0;
-    border-right: 1px solid var(--peach-line);
+    gap: var(--space-3);
+  }
+
+  .auth__side-flower-sm {
+    top: auto;
+    bottom: 34px;
+    left: 38px;
+  }
+
+  .auth__art {
+    width: 190px;
+    max-width: 62%;
+    margin-top: var(--space-4);
   }
 
   .auth__lines {
@@ -117,7 +137,7 @@
   }
 
   .auth__form {
-    padding: var(--space-7) var(--space-6);
+    padding: var(--space-7) var(--space-6) var(--space-7) var(--space-7);
     justify-content: center;
   }
 }

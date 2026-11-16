@@ -324,3 +324,11 @@ p {
 .wordmark--lg .wordmark__script {
   font-size: clamp(2.4rem, 6vw, 3.4rem);
 }
+
+.wordmark--center {
+  align-items: center;
+}
+
+.wordmark--center .wordmark__script {
+  margin-left: 0;
+}

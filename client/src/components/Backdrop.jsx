@@ -8,6 +8,8 @@ const palettes = {
   peach: ['peach', 'sage', 'blush'],
   sage: ['sage', 'peach', 'blush'],
   blush: ['blush', 'sage', 'peach'],
+  // peach leading, pink second: used behind the sage card on the sign-in page
+  'peach-blush': ['peach', 'blush', 'sage'],
 }
 
 export default function Backdrop({ tone = 'peach', strength = 'wash' }) {

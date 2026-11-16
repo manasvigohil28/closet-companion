@@ -67,11 +67,6 @@ export const copy = {
       email: 'you@example.com',
       password: 'at least 8 characters',
     },
-    side: {
-      line1: 'Upload what you own.',
-      line2: 'Plan a look for any day.',
-      line3: 'Know what to buy next.',
-    },
     errors: {
       nameRequired: 'Add your name so we know what to call you.',
       emailRequired: 'Add your email to continue.',

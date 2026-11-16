@@ -6,6 +6,7 @@ import Button from '../components/Button'
 import Field from '../components/Field'
 import Wordmark from '../components/Wordmark'
 import Flower from '../components/Flower'
+import ClosetArch from '../components/ClosetArch'
 import { copy } from '../lib/copy'
 import { validateAuth } from '../lib/validate'
 import { useAuth } from '../lib/auth'
@@ -60,19 +61,15 @@ export default function AuthPage({ mode }) {
 
   return (
     <div className="bg-soft auth">
-      {/* blush and sage shapes, so the peach panel on the card never blends in */}
-      <Backdrop tone="blush" strength="soft" />
+      {/* peach and pink shapes, so the sage panel on the card never blends in */}
+      <Backdrop tone="peach-blush" strength="soft" />
       <Paper className="auth__card">
         <aside className="auth__side">
-          <Flower size={44} className="auth__side-flower" />
-          <Wordmark size="lg" />
+          <Flower size={40} className="auth__side-flower" />
+          <Wordmark size="lg" align="center" />
           <p className="serif italic auth__tagline">{copy.tagline}</p>
-          <ul className="auth__lines">
-            <li>{copy.auth.side.line1}</li>
-            <li>{copy.auth.side.line2}</li>
-            <li>{copy.auth.side.line3}</li>
-          </ul>
-          <Flower size={22} color="var(--sage)" className="auth__side-flower-sm" />
+          <ClosetArch className="auth__art" />
+          <Flower size={20} color="var(--peach-deep)" className="auth__side-flower-sm" />
         </aside>
 
         <form className="auth__form" onSubmit={handleSubmit} noValidate>
