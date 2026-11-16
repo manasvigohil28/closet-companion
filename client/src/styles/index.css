@@ -1,1 +1,326 @@
-/* Global styles. Colors and fonts live in tokens.css. */
+@import './tokens.css';
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--cream);
+  color: var(--brown);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--rose);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* Type */
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0;
+  color: var(--brown);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 0;
+}
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.hand {
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--peach-deep);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+.soft {
+  color: var(--soft);
+}
+
+/* Backgrounds. The blob shapes come from the Backdrop component. */
+.bg-soft {
+  position: relative;
+  background-color: var(--blush-bg);
+  isolation: isolate;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.backdrop__blob {
+  position: absolute;
+}
+
+.backdrop__deco {
+  position: absolute;
+  color: var(--peach-deep);
+}
+
+/* Paper card: flat cream, thin border, one soft shadow */
+.paper {
+  position: relative;
+  background: var(--paper);
+  border: 1px solid var(--hairline);
+  border-radius: 20px;
+  padding: var(--space-6) var(--space-5);
+  box-shadow: 0 16px 40px rgba(140, 74, 82, 0.08);
+}
+
+/* Flat color block, the sage or blush square from the mood board */
+.block {
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+}
+
+.block--sage {
+  background: var(--sage-soft);
+}
+
+.block--blush {
+  background: var(--blush-soft);
+}
+
+.block--peach {
+  background: var(--peach-soft);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 46px;
+  padding: 0 var(--space-5);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.btn--primary {
+  background: var(--blush);
+  color: var(--rose);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: #e3a6ab;
+}
+
+.btn--secondary {
+  background: transparent;
+  border-color: var(--hairline);
+  color: var(--brown);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  border-color: var(--rose);
+  color: var(--rose);
+}
+
+.btn--quiet {
+  background: transparent;
+  color: var(--soft);
+  font-weight: 500;
+  font-size: 0.85rem;
+  min-height: 40px;
+  padding: 0 var(--space-3);
+}
+
+.btn--quiet:hover:not(:disabled) {
+  color: var(--rose);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* Forms */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.field__label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 var(--space-4);
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-input);
+  color: var(--brown);
+  outline: none;
+  transition: border-color 120ms ease;
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+.input:focus {
+  border-color: var(--rose);
+}
+
+.input--error {
+  border-color: var(--rose);
+}
+
+.field__error {
+  font-size: 0.9rem;
+  color: var(--rose);
+}
+
+/* Layout helpers */
+.page {
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: var(--space-6) var(--page-gutter);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.stack--lg {
+  gap: var(--space-6);
+}
+
+.center-screen {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-7) var(--page-gutter);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Wordmark */
+.wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 0.95;
+  color: var(--brown);
+}
+
+.wordmark__serif {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.wordmark__script {
+  font-family: var(--font-hand);
+  color: var(--peach-deep);
+  margin-left: 0.9em;
+  margin-top: -0.15em;
+}
+
+.wordmark--md .wordmark__serif {
+  font-size: 1.5rem;
+}
+.wordmark--md .wordmark__script {
+  font-size: 1.5rem;
+}
+
+.wordmark--lg .wordmark__serif {
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+}
+.wordmark--lg .wordmark__script {
+  font-size: clamp(2.4rem, 6vw, 3.4rem);
+}
