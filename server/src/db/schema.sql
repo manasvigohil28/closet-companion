@@ -1,0 +1,1 @@
+-- Phase 1 tables. Tags and other fields are added in Phase 2.
