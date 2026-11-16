@@ -1,8 +1,18 @@
 // Soft flat blobs and a few tiny flowers and sparkles behind a page.
 // Place inside a parent with the bg-soft class.
-export default function Backdrop({ tone = 'peach' }) {
-  const main = tone === 'sage' ? 'var(--sage-soft)' : 'var(--peach-soft)'
-  const side = tone === 'sage' ? 'var(--peach-soft)' : 'var(--sage-soft)'
+//
+// tone picks which color leads. strength 'wash' is very pale, for pages whose
+// cards use the same family of colors. 'soft' is the richer version, used where
+// the card on top is a different color and cannot blend into it.
+const palettes = {
+  peach: ['peach', 'sage', 'blush'],
+  sage: ['sage', 'peach', 'blush'],
+  blush: ['blush', 'sage', 'peach'],
+}
+
+export default function Backdrop({ tone = 'peach', strength = 'wash' }) {
+  const [a, b, c] = palettes[tone] ?? palettes.peach
+  const shade = (name) => `var(--${name}-${strength})`
 
   return (
     <div className="backdrop" aria-hidden="true">
@@ -13,7 +23,7 @@ export default function Backdrop({ tone = 'peach' }) {
         viewBox="0 0 400 400"
       >
         <path
-          fill={main}
+          fill={shade(a)}
           d="M212 24c72-10 151 28 170 98 20 72-26 139-82 176-57 38-134 46-193 8C47 268 4 199 16 133 27 68 92 40 212 24Z"
         />
       </svg>
@@ -25,19 +35,19 @@ export default function Backdrop({ tone = 'peach' }) {
         viewBox="0 0 400 400"
       >
         <path
-          fill={side}
+          fill={shade(b)}
           d="M186 18c85-12 171 46 189 126 18 83-40 150-108 190-66 39-150 36-205-14C9 269 0 193 24 126 48 57 101 30 186 18Z"
         />
       </svg>
 
-      {/* small blush blob, mid right */}
+      {/* small blob, mid right */}
       <svg
         className="backdrop__blob"
         style={{ top: '38%', right: '-8%', width: '26vw', minWidth: 140 }}
         viewBox="0 0 200 200"
       >
         <path
-          fill="var(--blush-soft)"
+          fill={shade(c)}
           d="M98 10c48-6 92 26 98 70 6 46-28 86-70 102-44 16-98 2-116-40C-8 98 6 50 40 28 60 16 72 13 98 10Z"
         />
       </svg>

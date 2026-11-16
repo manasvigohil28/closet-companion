@@ -60,7 +60,8 @@ export default function AuthPage({ mode }) {
 
   return (
     <div className="bg-soft auth">
-      <Backdrop />
+      {/* blush and sage shapes, so the peach panel on the card never blends in */}
+      <Backdrop tone="blush" strength="soft" />
       <Paper className="auth__card">
         <aside className="auth__side">
           <Flower size={44} className="auth__side-flower" />

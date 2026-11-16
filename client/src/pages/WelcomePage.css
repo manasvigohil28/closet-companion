@@ -41,14 +41,18 @@
   gap: var(--space-2) var(--space-3);
 }
 
+/* The border keeps the card readable even when a background shape sits behind it. */
 .step--peach {
   background: var(--peach-soft);
+  border: 1px solid var(--peach-line);
 }
 .step--sage {
   background: var(--sage-soft);
+  border: 1px solid var(--sage-line);
 }
 .step--blush {
   background: var(--blush-soft);
+  border: 1px solid var(--blush-line);
 }
 
 .step__icon {
