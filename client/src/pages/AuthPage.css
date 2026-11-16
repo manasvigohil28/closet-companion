@@ -85,6 +85,16 @@
   font-size: 1rem;
 }
 
+/* Problems that belong to the whole form, such as the server being unreachable */
+.auth__form-error {
+  margin: calc(var(--space-2) * -1) 0 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--blush-soft);
+  border-radius: var(--radius-input);
+  color: var(--rose);
+  font-size: 0.95rem;
+}
+
 @media (min-width: 820px) {
   .auth__card {
     max-width: 880px;

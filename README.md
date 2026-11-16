@@ -52,10 +52,12 @@ React (Vite) ──> Express API ──> PostgreSQL
 ## Run it locally
 
 1. Clone the repo.
-2. Copy `.env.example` to `.env` and fill in your values.
-3. Start the backend: `cd server && npm install && npm run dev`
-4. Start the frontend: `cd client && npm install && npm run dev`
-5. (Phase 2 onward) Start the ML service: `cd ml-service && pip install -r requirements.txt && uvicorn main:app --reload`
+2. Copy `server/.env.example` to `server/.env` and fill in your values. Do the same for `client`.
+3. Create the tables once: `cd server && npm install && npm run db:init`
+4. Start the backend: `npm run dev` (or `npm run dev:memory` to run without a database, nothing is saved)
+5. Start the frontend: `cd client && npm install && npm run dev`
+6. Run the API tests: `cd server && npm test`
+7. (Phase 2 onward) Start the ML service: `cd ml-service && pip install -r requirements.txt && uvicorn main:app --reload`
 
 ## Future work
 
