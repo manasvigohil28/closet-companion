@@ -59,7 +59,7 @@ export default function Backdrop({ tone = 'peach' }) {
       {/* sparkles */}
       <svg
         className="backdrop__deco"
-        style={{ top: '26%', left: '8%', width: 18 }}
+        style={{ top: '62%', left: '4%', width: 18 }}
         viewBox="0 0 24 24"
         fill="currentColor"
       >

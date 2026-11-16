@@ -1,0 +1,123 @@
+.welcome {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: var(--space-7) var(--page-gutter) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.welcome__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 34ch;
+}
+
+.welcome__lede {
+  font-size: 1.05rem;
+}
+
+/* Steps */
+.welcome__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.step {
+  position: relative;
+  padding: var(--space-5);
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    'icon number'
+    'title title'
+    'text text';
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.step--peach {
+  background: var(--peach-soft);
+}
+.step--sage {
+  background: var(--sage-soft);
+}
+.step--blush {
+  background: var(--blush-soft);
+}
+
+.step__icon {
+  grid-area: icon;
+  color: var(--brown);
+}
+
+.step__number {
+  grid-area: number;
+  justify-self: end;
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--paper);
+}
+
+.step__title {
+  grid-area: title;
+  font-size: 1.35rem;
+  margin-top: var(--space-3);
+}
+
+.step__text {
+  grid-area: text;
+  color: var(--soft);
+  font-size: 0.98rem;
+}
+
+/* Call to action */
+.welcome__cta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.welcome__cta-flower {
+  position: absolute;
+  top: -14px;
+  right: 10px;
+}
+
+.welcome__note {
+  font-size: 0.9rem;
+}
+
+@media (min-width: 720px) {
+  .welcome {
+    padding-top: var(--space-8);
+    gap: var(--space-7);
+  }
+
+  .welcome__steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .step {
+    min-height: 230px;
+    align-content: start;
+  }
+
+  .welcome__cta {
+    align-items: center;
+    text-align: center;
+  }
+
+  .welcome__cta-flower {
+    position: static;
+  }
+}

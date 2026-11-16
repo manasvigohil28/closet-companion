@@ -3,6 +3,43 @@ export const copy = {
   appName: 'Closet Companion',
   tagline: 'a place for the clothes you already own',
 
+  nav: {
+    closet: 'Closet',
+    add: 'Add clothes',
+    signOut: 'Sign out',
+  },
+
+  welcome: {
+    script: 'you made it',
+    title: 'Welcome to your closet',
+    lede: 'Three small steps, and the clothes you already own start working harder.',
+    steps: [
+      {
+        number: '01',
+        title: 'Add your clothes',
+        text: 'Upload photos of what you already own. A few pieces are enough to start.',
+      },
+      {
+        number: '02',
+        title: 'Plan a look',
+        text: 'Tell us about your day in your own words, and get outfits from your own closet.',
+      },
+      {
+        number: '03',
+        title: 'Find what to buy next',
+        text: 'See the one piece that would add the most new outfits before you shop.',
+      },
+    ],
+    cta: 'Add my first clothes',
+    note: 'You can add more any time. Nothing is shared with anyone.',
+  },
+
+  soon: {
+    title: 'Coming in the next step',
+    text: 'This page is being built. Your closet and the upload screen land here soon.',
+    back: 'Back to the welcome page',
+  },
+
   auth: {
     signIn: {
       script: 'welcome back',
